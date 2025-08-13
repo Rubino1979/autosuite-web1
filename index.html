@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AutoSuite® — Método Vende Fácil</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#0b0b0c; --negro2:#111214; --oro:#d4af37; --oro2:#f1d17a;
+  --rojo:#c61f1f; --gris:#9ba3ae; --blanco:#ffffff; --cont:1200px;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--negro);color:var(--blanco);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--cont);margin:auto;padding:0 20px}
+.header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0c0c0e, #0b0b0cEE);backdrop-filter:saturate(140%) blur(4px);border-bottom:1px solid #1b1c1f}
+.nav{display:flex;align-items:center;gap:24px;height:76px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo .mark{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(145deg,#1a1b1e,#0f1013);border:1px solid #1f2025}
+.logo .mark svg{width:28px;height:28px}
+.logo .txt{font-weight:800;letter-spacing:.2px;font-size:22px}
+.logo .reg{font-size:12px;vertical-align:super;opacity:.8;margin-left:2px}
+.menu{margin-left:auto;display:flex;gap:22px;align-items:center}
+.menu a{color:#cfd5df;font-weight:600;opacity:.9}
+.menu a:hover{color:#fff}
+.cta{background:linear-gradient(90deg,var(--rojo),#e22);padding:10px 16px;border-radius:10px;font-weight:800}
+.cta:hover{filter:brightness(1.1)}
+/* HERO */
+.hero{position:relative;padding:64px 0 36px;border-bottom:1px solid #1c1d21;background:
+linear-gradient(180deg, rgba(212,175,55,.06), transparent 50%),
+radial-gradient(1200px 400px at 70% -20%, rgba(198,31,31,.15), transparent 60%);}
+.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px}
+.hTitle{font-size:48px;line-height:1.05;font-weight:800;letter-spacing:.2px}
+.hTitle strong{color:var(--oro2)}
+.hSub{margin-top:14px;color:#cfd5df;max-width:52ch}
+.badge{display:inline-flex;gap:10px;align-items:center;border:1px solid #2a2b31;border-radius:999px;padding:8px 14px;background:#101114;margin-bottom:16px;color:#cfd5df;font-weight:600}
+.heroBox{border:1px solid #202127;border-radius:16px;overflow:hidden;background:linear-gradient(145deg,#111214,#0d0e10)}
+.heroBox .top{padding:18px 20px;border-bottom:1px solid #1d1e22;display:flex;align-items:center;gap:12px}
+.dot{width:10px;height:10px;border-radius:999px;background:#fa3f3f}
+.heroBox .img{height:280px;background:
+radial-gradient(500px 180px at 30% 0,rgba(241,209,122,.18),transparent 60%),
+radial-gradient(700px 260px at 90% 100%,rgba(198,31,31,.22),transparent 55%),
+linear-gradient(125deg,#0d0e10 20%,#141519 90%);display:grid;place-items:center;color:#ffffff88;font-weight:700;letter-spacing:.3em}
+.heroBtns{margin-top:22px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{padding:12px 16px;border-radius:12px;font-weight:800;border:1px solid #25262b;background:#121317}
+.btn.gold{background:linear-gradient(90deg,#b88a1d,var(--oro));border:0;color:#1a1200}
+.btn.gold:hover{filter:contrast(1.05)}
+/* SECCIONES */
+.section{padding:48px 0;border-bottom:1px solid #16171a}
+.secTitle{font-size:26px;font-weight:800;margin-bottom:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid #22252a;border-radius:14px;background:#0f1013;padding:18px}
+.card h4{margin:6px 0 10px;font-size:18px}
+.card p{color:#c9d0db}
+.pasos{counter-reset:step}
+.pasos li{list-style:none;margin:0 0 14px;padding:12px 12px 12px 44px;border:1px dashed #2a2c31;border-radius:12px;position:relative;background:#0f1013}
+.pasos li::before{counter-increment:step;content:counter(step);position:absolute;left:12px;top:10px;width:24px;height:24px;border-radius:7px;background:linear-gradient(120deg,#b88a1d,var(--oro));color:#1a1200;display:grid;place-items:center;font-weight:900}
+/* alianzas */
+.strip{display:flex;gap:24px;overflow:auto;padding:12px 0}
+.tag{border:1px solid #25262b;border-radius:999px;padding:8px 16px;white-space:nowrap;background:#101114;color:#cfd5df}
+/* FOOTER */
+.footer{padding:48px 0;background:#0a0a0b;border-top:1px solid #16171a}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:24px}
+.ftitle{font-weight:800;margin-bottom:12px}
+.small{color:#aab3bf;font-size:14px}
+.pay{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.pay .p{height:22px;width:48px;border:1px solid #262830;border-radius:6px;background:#101114}
+.social{display:flex;gap:10px;margin-top:8px}
+.ic{width:34px;height:34px;border:1px solid #282a30;border-radius:10px;background:#101114;display:grid;place-items:center}
+.copy{margin-top:20px;color:#8f98a5;font-size:13px}
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.panel{max-width:720px;width:100%;background:#0e0f12;border:1px solid #22252a;border-radius:16px;overflow:hidden}
+.phead{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #1c1e23}
+.pbody{padding:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.input{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+input,select,textarea{background:#111217;border:1px solid #2a2c31;border-radius:10px;color:#e6ebf2;padding:12px}
+.actions{display:flex;gap:12px;justify-content:flex-end;margin-top:10px}
+.note{font-size:12px;color:#aab3bf}
+@media (max-width:960px){
+  .heroGrid{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .menu{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <div class="mark">
+        <!-- Ícono minimal del auto -->
+        <svg viewBox="0 0 64 64" fill="none" stroke="#d4af37" stroke-width="2">
+          <path d="M8 38c4-10 18-16 30-12 8 2 13 7 18 12" />
+          <circle cx="18" cy="44" r="4" stroke="#c61f1f"/>
+          <circle cx="46" cy="44" r="4" stroke="#c61f1f"/>
+        </svg>
+      </div>
+      <div class="txt">AutoSuite<span class="reg">®</span></div>
+    </div>
+
+    <nav class="menu">
+      <a href="#beneficios">Beneficios</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#alianzas">Alianzas y convenios</a>
+      <a href="#contacto">Contacto</a>
+      <a class="cta" href="#" id="btnVende">Vendemos Tu Auto</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container heroGrid">
+    <div>
+      <span class="badge">Método Vende Fácil</span>
+      <h1 class="hTitle">Vendemos <strong>solo autos verificados</strong>. Eso genera confianza y acelera la venta.</h1>
+      <p class="hSub">Deslígate del proceso: con AutoSuite asignamos un broker automotriz que gestiona publicación, filtrado, visitas y cierre. Conduce tu auto hasta el día de la venta.</p>
+      <div class="heroBtns">
+        <a class="btn gold" href="#" id="btnVende2">Vendemos Tu Auto</a>
+        <a class="btn" href="#como">Cómo funciona</a>
+      </div>
+    </div>
+    <div class="heroBox">
+      <div class="top"><span class="dot"></span><span class="dot" style="background:#ffc94d"></span><span class="dot" style="background:#6cff6c"></span></div>
+      <div class="img">IMAGEN SIN MARCAS</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="beneficios">
+  <div class="container">
+    <h3 class="secTitle">Beneficios clave</h3>
+    <div class="grid3">
+      <div class="card"><h4>Asesoría personalizada</h4><p>Un broker automotriz te guía de inicio a fin y maximiza el valor de tu vehículo.</p></div>
+      <div class="card"><h4>Proceso seguro</h4><p>Publicación, filtrado de interesados y verificación profesional del auto.</p></div>
+      <div class="card"><h4>Mejor precio</h4><p>Acceso a compradores al contado, financiamiento y parte de pago.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="como">
+  <div class="container">
+    <h3 class="secTitle">Cómo funciona</h3>
+    <ul class="pasos">
+      <li>Ingresa datos básicos del vehículo (marca, modelo, año, versión, kilometraje).</li>
+      <li>Sube fotos y documentos (padrón, permiso de circulación, revisión técnica, SOA). </li>
+      <li>Activa el Sistema Vende Fácil y asignamos tu broker (gestión completa).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="alianzas">
+  <div class="container">
+    <h3 class="secTitle">Alianzas y convenios</h3>
+    <div class="strip">
+      <span class="tag">Empresa A</span><span class="tag">Empresa B</span><span class="tag">Empresa C</span>
+      <span class="tag">Automotora X</span><span class="tag">Financiera Y</span><span class="tag">Portal Z</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contacto">
+  <div class="container fgrid">
+    <div>
+      <div class="logo" style="margin-bottom:12px"><div class="mark"></div><div class="txt">AutoSuite<span class="reg">®</span></div></div>
+      <div class="small">Somos tu aliado en la compra y venta de vehículos. Mejor gestión, mejores resultados.</div>
+      <div class="social">
+        <div class="ic">IG</div><div class="ic">TT</div><div class="ic">YT</div><div class="ic">IN</div>
+      </div>
+    </div>
+    <div>
+      <div class="ftitle">Teléfonos</div>
+      <div class="small">Chile: +56 2 2804 09971</div>
+      <div class="small">EEUU: +1 (917) 245 1520</div>
+      <div class="small">UK: +44 745 187 9691</div>
+      <div class="ftitle" style="margin-top:12px">Legal</div>
+      <div class="small">Políticas de Privacidad</div>
+      <div class="small">Términos y Condiciones</div>
+    </div>
+    <div>
+      <div class="ftitle">Correspondencia LATAM</div>
+      <div class="small">Las Condes, Santiago, Chile</div>
+      <div class="ftitle" style="margin-top:12px">EE. UU.</div>
+      <div class="small">Doral, FL</div>
+      <div class="ftitle" style="margin-top:12px">Europa</div>
+      <div class="small">Hounslow, UK</div>
+    </div>
+    <div>
+      <div class="ftitle">Medios de pago</div>
+      <div class="pay">
+        <div class="p"></div><div class="p"></div><div class="p"></div><div class="p"></div>
+      </div>
+      <div class="copy">© AutoSuite® — HoldingSmart Group. Marca registrada.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL FORMULARIO -->
+<div class="modal" id="modal">
+  <div class="panel">
+    <div class="phead"><strong>Activar Sistema Vende Fácil</strong> <button id="x" style="all:unset;cursor:pointer">✕</button></div>
+    <div class="pbody">
+      <form id="formAuto" action="#" method="post">
+        <div class="row">
+          <div class="input"><label>Nombre de contacto</label><input name="nombre" required></div>
+          <div class="input"><label>Teléfono</label><input name="telefono" required></div>
+        </div>
+        <div class="row">
+          <div class="input"><label>Correo</label><input type="email" name="correo" required></div>
+          <div class="input"><label>Región</label><select name="region"><option>V Región</option><option>RM</option></select></div>
+        </div>
+        <hr style="border-color:#1d1e22;margin:10px 0">
+        <div class="row">
+          <div class="input"><label>Marca</label><input name="marca" required></div>
+          <div class="input"><label>Modelo</label><input name="modelo" required></div>
+        </div>
+        <div class="row">
+          <div class="input"><label>Año (≤ 5 años)</label><input name="anio" type="number" min="2019" max="2025" required></div>
+          <div class="input"><label>Versión</label><input name="version"></div>
+        </div>
+        <div class="row">
+          <div class="input"><label>Kilometraje (tramo)</label>
+            <select name="kms_tramo">
+              <option>0–5.000</option><option>5.001–10.000</option><option>10.001–15.000</option>
+              <option>15.001–20.000</option><option>20.001–30.000</option><option>30.001–40.000</option>
+              <option>40.001–50.000</option><option>50.001–60.000</option><option>60.001–70.000</option>
+              <option>70.001–80.000</option><option>80.001–90.000</option><option>90.001–100.000</option>
+              <option>100.001–110.000</option><option>110.001–120.000</option><option>120.001–130.000</option>
+              <option>130.001–140.000</option><option>140.001–150.000</option>
+            </select>
+          </div>
+          <div class="input"><label>Kilometraje exacto (máx. 150.000)</label><input type="number" name="kms_exact" max="150000"></div>
+        </div>
+        <div class="input"><label>Tipo de vehículo</label>
+          <select name="tipo" required><option>Auto</option><option>SUV</option><option>Pickup</option><option>Furgón/Comercial</option></select>
+        </div>
+        <div class="input"><label>¿Tiene prenda/deuda?</label>
+          <select name="prenda"><option>No</option><option>Prenda vigente</option><option>Prenda alzada</option></select>
+        </div>
+        <div class="input"><label>Precio de referencia (opcional)</label><input name="precio_ref" placeholder="Sólo referencia para orientación"></div>
+        <div class="note">Tras enviar, tu broker te contactará en 48 horas hábiles.</div>
+        <div class="actions">
+          <button type="button" class="btn" id="cancel">Cancelar</button>
+          <button class="btn gold" type="submit">Activar Sistema</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+const m = document.getElementById('modal');
+document.getElementById('btnVende').onclick = document.getElementById('btnVende2').onclick = (e)=>{e.preventDefault();m.classList.add('on')};
+document.getElementById('x').onclick = document.getElementById('cancel').onclick = ()=>m.classList.remove('on');
+
+// 👉 Para enviar a Google Sheets: reemplaza el "action" por tu URL de Google Forms
+// o usa fetch() a un Apps Script WebApp (POST) y muestra un alert.
+document.getElementById('formAuto').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  alert('Simulación enviada. En Wix reemplaza este formulario por Wix Forms o un Google Form embebido.');
+  m.classList.remove('on');
+});
+</script>
+</body>
+</html>
